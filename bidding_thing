@@ -1,0 +1,22 @@
+from replit import clear
+
+from art import logo
+
+print(logo)
+price_dict ={}
+contin = True
+while contin:
+  name = input("Write your name:\n")
+  bid = int(input("What is your bid?\n$"))
+  price_dict[bid]=name
+  wat = input("Would anyone else like to bet? (yes or no)\n")
+  if wat == "yes":
+    clear()
+  else:
+    print("Thank you for bidding!")
+    contin= False
+high_bid = 0
+for i in price_dict:
+  if i>high_bid:
+    high_bid = i
+print(f"The winner is {price_dict[high_bid]} with a bid of ${high_bid}.")
